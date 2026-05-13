@@ -2,7 +2,7 @@ import styles from './Navbar.module.css';
 
 export default function Navbar() {
   return (
-    <nav>
+    <nav className={styles.navbar}>
       <ul className={styles.navbarUL}>
         <li className={styles.navbarLI}>
           <a href='homepage' className={styles.navbarA}>
