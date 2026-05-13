@@ -1,0 +1,14 @@
+.navbarUL {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.navbarLI {
+  list-style-type: none;
+}
+
+.navbarA {
+  text-decoration: none;
+}
