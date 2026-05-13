@@ -1,14 +1,12 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import Home from './components/Home/Home';
-import Shop from './components/Shop/Shop';
+import { Outlet } from 'react-router';
 
 function App() {
   return (
     <>
       <Navbar />
-      {/* <Home /> */}
-      <Shop />
+      <Outlet />
     </>
   );
 }

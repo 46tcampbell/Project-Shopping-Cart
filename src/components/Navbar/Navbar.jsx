@@ -1,23 +1,24 @@
 import styles from './Navbar.module.css';
+import { Link } from 'react-router';
 
 export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <ul className={styles.navbarUL}>
         <li className={styles.navbarLI}>
-          <a href='homepage' className={styles.navbarA}>
+          <Link to='homepage' className={styles.navbarA}>
             Homepage
-          </a>
+          </Link>
         </li>
         <li className={styles.navbarLI}>
-          <a href='shop' className={styles.navbarA}>
+          <Link to='shop' className={styles.navbarA}>
             Shop
-          </a>
+          </Link>
         </li>
         <li className={styles.navbarLI}>
-          <a href='cart' className={styles.navbarA}>
+          <Link to='cart' className={styles.navbarA}>
             Cart
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
