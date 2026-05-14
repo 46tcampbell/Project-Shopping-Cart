@@ -3,12 +3,18 @@ import Card from '../Card/Card';
 import { useOutletContext } from 'react-router';
 
 export default function Shop() {
-  const [cart, setCart, quantityDecrement, quantityIncrement, changeHandler] =
-    useOutletContext();
+  const { cart, setCart, changeHandler } = useOutletContext();
 
   return cart.map((item) => {
     return (
-      <Card title={item.title} image={item.image} id={item.id} key={item.id} />
+      <Card
+        title={item.title}
+        image={item.image}
+        id={item.id}
+        key={item.id}
+        setCart={setCart}
+        changeHandler={changeHandler}
+      />
     );
   });
 }

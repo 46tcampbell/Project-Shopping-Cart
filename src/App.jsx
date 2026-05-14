@@ -58,7 +58,9 @@ function App() {
   const changeHandler = (e, id) => {
     setCart((prevItems) =>
       prevItems.map((item) =>
-        item.id === id ? { ...item, quantity: e.target.value } : item
+        item.id === id
+          ? { ...item, quantity: item.quantity + +e.target.elements[0].value }
+          : item
       )
     );
   };
@@ -67,13 +69,13 @@ function App() {
     <>
       <Navbar cartTotal={cartTotal} />
       <Outlet
-        context={[
+        context={{
           cart,
           setCart,
           quantityDecrement,
           quantityIncrement,
           changeHandler,
-        ]}
+        }}
       />
     </>
   );
