@@ -55,6 +55,14 @@ function App() {
     );
   };
 
+  const quantityDelete = (id) => {
+    setCart((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, quantity: 0 } : item
+      )
+    );
+  };
+
   const changeHandler = (e, id) => {
     setCart((prevItems) =>
       prevItems.map((item) =>
@@ -75,6 +83,8 @@ function App() {
           quantityDecrement,
           quantityIncrement,
           changeHandler,
+          cartTotal,
+          quantityDelete,
         }}
       />
     </>

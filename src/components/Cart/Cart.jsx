@@ -1,28 +1,43 @@
+import { useOutletContext, Link } from 'react-router';
+import CartItem from '../CartItem/CartItem';
+
 export default function Cart() {
-  return <h1>Hi there, I'm the cart</h1>;
+  const {
+    cart,
+    setCart,
+    quantityDecrement,
+    quantityIncrement,
+    changeHandler,
+    cartTotal,
+    quantityDelete,
+  } = useOutletContext();
+
+  if (cartTotal === 0) {
+    return (
+      <div>
+        <h1>Oh no, you don't have anything in the cart!</h1>
+        <Link to='/shop'>
+          You can go back to the shop page by clicking here, though!
+        </Link>
+      </div>
+    );
+  } else {
+    return cart.map((item) => {
+      if (item.quantity > 0) {
+        return (
+          <CartItem
+            key={item.id}
+            id={item.id}
+            title={item.title}
+            image={item.image}
+            quantity={item.quantity}
+            quantityDecrement={quantityDecrement}
+            quantityIncrement={quantityIncrement}
+            changeHandler={changeHandler}
+            quantityDelete={quantityDelete}
+          />
+        );
+      }
+    });
+  }
 }
-
-/* Below is code originally written for the shop page, but
-I realized that this functionality is better suited for
-the cart page as the quanity function updaters below are tied
-to the cart state whereas the shop page will need its own quantity
-info to only update cart state after Add to Cart is pressed:
-
-<input
-              type='text'
-              inputMode='numeric'
-              pattern='[0-9]*'
-              placeholder='Numbers only'
-              id='quantity'
-              className={styles.input}
-              value={quantity}
-              onChange={(e) => changeHandler(e, id)}
-            />
-            <button onClick={() => quantityDecrement(id)} type='button'>
-              -
-            </button>
-            <button onClick={() => quantityIncrement(id)} type='button'>
-              +
-            </button>
-
-*/
