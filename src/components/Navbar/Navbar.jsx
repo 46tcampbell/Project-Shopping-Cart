@@ -1,7 +1,7 @@
 import styles from './Navbar.module.css';
 import { Link } from 'react-router';
 
-export default function Navbar() {
+export default function Navbar({ cartTotal }) {
   return (
     <nav className={styles.navbar}>
       <ul className={styles.navbarUL}>
@@ -17,7 +17,7 @@ export default function Navbar() {
         </li>
         <li className={styles.navbarLI}>
           <Link to='cart' className={styles.navbarA}>
-            Cart
+            Cart - {cartTotal}
           </Link>
         </li>
       </ul>

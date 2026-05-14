@@ -34,10 +34,47 @@ function App() {
     return () => controller.abort();
   }, []);
 
+  const cartTotal = cart.reduce(
+    (accumulator, product) => accumulator + product.quantity,
+    0
+  );
+
+  const quantityDecrement = (id) => {
+    setCart((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, quantity: +item.quantity - 1 } : item
+      )
+    );
+  };
+
+  const quantityIncrement = (id) => {
+    setCart((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, quantity: +item.quantity + 1 } : item
+      )
+    );
+  };
+
+  const changeHandler = (e, id) => {
+    setCart((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, quantity: e.target.value } : item
+      )
+    );
+  };
+
   return (
     <>
-      <Navbar />
-      <Outlet />
+      <Navbar cartTotal={cartTotal} />
+      <Outlet
+        context={[
+          cart,
+          setCart,
+          quantityDecrement,
+          quantityIncrement,
+          changeHandler,
+        ]}
+      />
     </>
   );
 }

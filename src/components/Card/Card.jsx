@@ -1,21 +1,25 @@
 import styles from './Card.module.css';
 import { useState } from 'react';
 
-export default function Card() {
+export default function Card({ image, title }) {
   const [quantity, setQuantity] = useState(0);
-  const changeHandler = (e) => setQuantity(e.target.value);
-  const quantityDecrease = () => {
-    if (+quantity > 0) {
-      return setQuantity(+quantity - 1);
+
+  const quantityDecrement = () => {
+    if (quantity > 0) {
+      setQuantity(+quantity - 1);
     }
+  };
+
+  const quantityIncrement = () => {
+    setQuantity(+quantity + 1);
   };
   return (
     <div className={styles.cardDiv}>
       <div>
-        <h3 className={styles.shopH3}>Title</h3>
+        <h3 className={styles.shopH3}>{title}</h3>
       </div>
       <div>
-        <img src='../../../public/images/product.jpg' alt='' />
+        <img src={image} alt='' />
       </div>
       <div>
         <form action=''>
@@ -29,12 +33,12 @@ export default function Card() {
               id='quantity'
               className={styles.input}
               value={quantity}
-              onChange={changeHandler}
+              onChange={(e) => setQuantity(e.target.value)}
             />
-            <button onClick={quantityDecrease} type='button'>
+            <button onClick={quantityDecrement} type='button'>
               -
             </button>
-            <button onClick={() => setQuantity(+quantity + 1)} type='button'>
+            <button onClick={quantityIncrement} type='button'>
               +
             </button>
           </div>
