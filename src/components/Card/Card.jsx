@@ -1,7 +1,8 @@
 import styles from './Card.module.css';
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-export default function Card({ image, title, id, changeHandler }) {
+function Card({ image, title, id, changeHandler }) {
   const [quantity, setQuantity] = useState(0);
 
   const quantityDecrement = () => {
@@ -62,3 +63,12 @@ export default function Card({ image, title, id, changeHandler }) {
     </div>
   );
 }
+
+Card.propTypes = {
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  changeHandler: PropTypes.func.isRequired,
+};
+
+export default Card;

@@ -1,18 +1,25 @@
 import { useOutletContext, Link } from 'react-router';
+import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import CartItem from '../CartItem/CartItem';
 
-export default function Cart() {
-  const {
-    cart,
-    setCart,
-    quantityDecrement,
-    quantityIncrement,
-    changeHandler,
-    cartTotal,
-    quantityDelete,
-  } = useOutletContext();
+const propTypes = {
+  cartTotal: PropTypes.number.isRequired,
+  cart: PropTypes.array.isRequired,
+  quantityDecrement: PropTypes.func.isRequired,
+  quantityIncrement: PropTypes.func.isRequired,
+  changeHandler: PropTypes.func.isRequired,
+  quantityDelete: PropTypes.func.isRequired,
+};
 
-  if (cartTotal === 0) {
+function Cart() {
+  const context = useOutletContext();
+
+  useEffect(() => {
+    PropTypes.checkPropTypes(propTypes, context, 'context', 'Cart');
+  }, [context]);
+
+  if (context.cartTotal === 0) {
     return (
       <div>
         <h1>Oh no, you don't have anything in the cart!</h1>
@@ -22,7 +29,7 @@ export default function Cart() {
       </div>
     );
   } else {
-    return cart.map((item) => {
+    return context.cart.map((item) => {
       if (item.quantity > 0) {
         return (
           <CartItem
@@ -31,13 +38,15 @@ export default function Cart() {
             title={item.title}
             image={item.image}
             quantity={item.quantity}
-            quantityDecrement={quantityDecrement}
-            quantityIncrement={quantityIncrement}
-            changeHandler={changeHandler}
-            quantityDelete={quantityDelete}
+            quantityDecrement={context.quantityDecrement}
+            quantityIncrement={context.quantityIncrement}
+            changeHandler={context.changeHandler}
+            quantityDelete={context.quantityDelete}
           />
         );
       }
     });
   }
 }
+
+export default Cart;
