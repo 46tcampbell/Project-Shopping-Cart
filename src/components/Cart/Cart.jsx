@@ -42,6 +42,7 @@ function Cart() {
             quantityIncrement={context.quantityIncrement}
             changeHandler={context.changeHandler}
             quantityDelete={context.quantityDelete}
+            altText={item.altText}
           />
         );
       }

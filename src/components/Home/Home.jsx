@@ -8,22 +8,22 @@ export default function Home() {
         <div className={styles.homeIMGDIV}>
           <img
             className={styles.homeIMG}
-            src='../../../public/images/storefront1.jpg'
-            alt=''
+            src='../../../images/storefront1.jpg'
+            alt='generic storefront'
           />
         </div>
         <div className={styles.homeIMGDIV}>
           <img
             className={styles.homeIMG}
-            src='../../../public/images/open-sign.jpg'
-            alt=''
+            src='../../../images/open-sign.jpg'
+            alt='open shop sign'
           />
         </div>
         <div className={styles.homeIMGDIV}>
           <img
             className={styles.homeIMG}
-            src='../../../public/images/storefront2.jpg'
-            alt=''
+            src='../../../images/storefront2.jpg'
+            alt="Bridie's storefront"
           />
         </div>
       </div>

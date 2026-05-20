@@ -2,7 +2,7 @@ import styles from './Card.module.css';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-function Card({ image, title, id, changeHandler }) {
+function Card({ image, title, id, changeHandler, altText = '' }) {
   const [quantity, setQuantity] = useState(0);
 
   const quantityDecrement = () => {
@@ -29,7 +29,7 @@ function Card({ image, title, id, changeHandler }) {
         <h3 className={styles.shopH3}>{title}</h3>
       </div>
       <div>
-        <img src={image} alt='' />
+        <img src={image} alt={altText} />
       </div>
       <div>
         <form action='' onSubmit={(e) => handleSubmit(e, id)}>

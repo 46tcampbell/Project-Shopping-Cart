@@ -24,6 +24,7 @@ function App() {
           title: obj.title,
           image: obj.image,
           quantity: 0,
+          altText: `photo of ${obj.title}`,
         }));
         setCart(mappedData);
       } catch (error) {

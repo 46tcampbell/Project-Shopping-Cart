@@ -9,6 +9,7 @@ function CartItem({
   quantityIncrement,
   quantityDelete,
   id,
+  altText = '',
 }) {
   return (
     <div className={styles.cardDiv}>
@@ -16,7 +17,7 @@ function CartItem({
         <h3 className={styles.shopH3}>{title}</h3>
       </div>
       <div>
-        <img src={image} alt='' />
+        <img src={image} alt={altText} />
       </div>
       <div>
         <div className={styles.quantityDiv}>

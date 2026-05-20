@@ -26,6 +26,7 @@ function Shop() {
         key={item.id}
         setCart={context.setCart}
         changeHandler={context.changeHandler}
+        altText={item.altText}
       />
     );
   });
