@@ -21,32 +21,42 @@ function Cart() {
 
   if (context.cartTotal === 0) {
     return (
-      <div>
-        <h1>Oh no, you don't have anything in the cart!</h1>
-        <Link to='/shop'>
-          You can go back to the shop page by clicking here, though!
-        </Link>
-      </div>
+      <main>
+        <div>
+          <h1>Oh no, you don't have anything in the cart!</h1>
+          <Link to='/shop'>
+            You can go back to the shop page by clicking here, though!
+          </Link>
+        </div>
+      </main>
     );
   } else {
-    return context.cart.map((item) => {
-      if (item.quantity > 0) {
-        return (
-          <CartItem
-            key={item.id}
-            id={item.id}
-            title={item.title}
-            image={item.image}
-            quantity={item.quantity}
-            quantityDecrement={context.quantityDecrement}
-            quantityIncrement={context.quantityIncrement}
-            changeHandler={context.changeHandler}
-            quantityDelete={context.quantityDelete}
-            altText={item.altText}
-          />
-        );
-      }
-    });
+    return (
+      <main>
+        <ul>
+          {context.cart.map((item) => {
+            if (item.quantity > 0) {
+              return (
+                <li key={item.id}>
+                  <CartItem
+                    key={item.id}
+                    id={item.id}
+                    title={item.title}
+                    image={item.image}
+                    quantity={item.quantity}
+                    quantityDecrement={context.quantityDecrement}
+                    quantityIncrement={context.quantityIncrement}
+                    changeHandler={context.changeHandler}
+                    quantityDelete={context.quantityDelete}
+                    altText={item.altText}
+                  />
+                </li>
+              );
+            }
+          })}
+        </ul>
+      </main>
+    );
   }
 }
 

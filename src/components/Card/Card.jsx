@@ -26,34 +26,40 @@ function Card({ image, title, id, changeHandler, altText = '' }) {
   return (
     <div className={styles.cardDiv}>
       <div>
-        <h3 className={styles.shopH3}>{title}</h3>
+        <h3 title={title} className={styles.shopH3}>
+          {title}
+        </h3>
       </div>
-      <div>
-        <img src={image} alt={altText} />
+      <div className={styles.imgDiv}>
+        <img className={styles.img} src={image} alt={altText} />
       </div>
       <div>
         <form action='' onSubmit={(e) => handleSubmit(e, id)}>
-          <label htmlFor='quantity'>Quantity:</label>
           <div className={styles.quantityDiv}>
-            <input
-              type='text'
-              inputMode='numeric'
-              pattern='[0-9]*'
-              placeholder='Numbers only'
-              id='quantity'
-              className={styles.input}
-              value={quantity}
-              onChange={(e) =>
-                // replace below stops any non-number values from being entered into the input
-                setQuantity(e.target.value.replace(/[^0-9]/g, ''))
-              }
-            />
-            <button onClick={quantityDecrement} type='button'>
-              -
-            </button>
-            <button onClick={quantityIncrement} type='button'>
-              +
-            </button>
+            <div className={styles.inputDiv}>
+              <label htmlFor='quantity'>Quantity:</label>
+              <input
+                type='text'
+                inputMode='numeric'
+                pattern='[0-9]*'
+                placeholder='Numbers only'
+                id='quantity'
+                className={styles.input}
+                value={quantity}
+                onChange={(e) =>
+                  // replace below stops any non-number values from being entered into the input
+                  setQuantity(e.target.value.replace(/[^0-9]/g, ''))
+                }
+              />
+            </div>
+            <div className={styles.crementBtn}>
+              <button onClick={quantityDecrement} type='button'>
+                -
+              </button>
+              <button onClick={quantityIncrement} type='button'>
+                +
+              </button>
+            </div>
           </div>
           <button className={styles.submitBtn} type='submit'>
             Add to Cart

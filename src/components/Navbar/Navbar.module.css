@@ -5,15 +5,7 @@
   gap: 5rem;
 }
 
-.navbarLI {
-  list-style-type: none;
-}
-
-.navbarA {
-  text-decoration: none;
-}
-
 .navbar {
-  padding: 1rem;
+  padding: 0 1rem 1rem;
   /* margin-bottom: 1rem; */
 }

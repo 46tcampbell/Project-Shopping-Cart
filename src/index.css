@@ -67,3 +67,33 @@ h6 {
   isolation: isolate;
 }
 /* End of reset */
+
+/* Global settings I want */
+
+body {
+  padding: 1rem;
+  background-color: #2593f3;
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  transform: translateY(-5px);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-decoration: underline;
+}
+
+button:hover {
+  cursor: pointer;
+}
