@@ -37,20 +37,22 @@ function Card({ image, title, id, changeHandler, altText = '' }) {
         <form action='' onSubmit={(e) => handleSubmit(e, id)}>
           <div className={styles.quantityDiv}>
             <div className={styles.inputDiv}>
-              <label htmlFor='quantity'>Quantity:</label>
-              <input
-                type='text'
-                inputMode='numeric'
-                pattern='[0-9]*'
-                placeholder='Numbers only'
-                id='quantity'
-                className={styles.input}
-                value={quantity}
-                onChange={(e) =>
-                  // replace below stops any non-number values from being entered into the input
-                  setQuantity(e.target.value.replace(/[^0-9]/g, ''))
-                }
-              />
+              <label>
+                Quantity:
+                <input
+                  type='text'
+                  inputMode='numeric'
+                  pattern='[0-9]*'
+                  placeholder='Numbers only'
+                  id='quantity'
+                  className={styles.input}
+                  value={quantity}
+                  onChange={(e) =>
+                    // replace below stops any non-number values from being entered into the input
+                    setQuantity(e.target.value.replace(/[^0-9]/g, ''))
+                  }
+                />
+              </label>
             </div>
             <div className={styles.crementBtnDiv}>
               <button
