@@ -52,11 +52,19 @@ function Card({ image, title, id, changeHandler, altText = '' }) {
                 }
               />
             </div>
-            <div className={styles.crementBtn}>
-              <button onClick={quantityDecrement} type='button'>
+            <div className={styles.crementBtnDiv}>
+              <button
+                className={styles.crementBtn}
+                onClick={quantityDecrement}
+                type='button'
+              >
                 -
               </button>
-              <button onClick={quantityIncrement} type='button'>
+              <button
+                className={styles.crementBtn}
+                onClick={quantityIncrement}
+                type='button'
+              >
                 +
               </button>
             </div>

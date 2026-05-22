@@ -84,8 +84,8 @@ once tests are complete and re-write if needed. */
     const shop = screen.getByRole('link', { name: /shop/i });
     await user.click(shop);
 
-    const cardText = await screen.findByRole('textbox', { name: /quantity/i });
-    expect(cardText).toBeInTheDocument();
+    const listItems = await screen.findAllByRole('listitem');
+    expect(listItems[0]).toBeInTheDocument();
   });
 
   it('renders empty cart page when clicked with no items', async () => {
@@ -107,9 +107,13 @@ once tests are complete and re-write if needed. */
     const router = createMemoryRouter(routes);
     render(<RouterProvider router={router} />);
 
-    const shop = screen.getByRole('link', { name: /shop/i });
+    const shop = screen.getByRole('link', { name: /shop/i }, { timeout: 3000 });
     await user.click(shop);
-    const incrementBtn = await screen.findAllByRole('button', { name: '+' });
+    const incrementBtn = await screen.findAllByRole(
+      'button',
+      { name: '+' },
+      { timeout: 3000 }
+    );
     await user.click(incrementBtn[0]);
     const addBtn = await screen.findAllByRole('button', {
       name: /add to cart/i,

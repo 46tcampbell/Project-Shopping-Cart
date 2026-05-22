@@ -6,6 +6,9 @@
   border-radius: 1rem;
   padding: 1rem;
   gap: 0.5rem;
+  background-color: var(--primary-text-color);
+  color: var(--primary-bg-color);
+  box-shadow: var(--primary-box-shadow);
 }
 
 .shopH3 {
@@ -24,10 +27,32 @@
 
 .input {
   width: 55%;
+  color: inherit;
+  background-color: var(--primary-text-color);
+  outline: none;
+  border: 1px solid var(--primary-bg-color);
+}
+
+.input:focus {
+  border: 2px inset rgb(118, 118, 188);
+  outline: none;
+}
+
+.input::placeholder {
+  color: inherit;
 }
 
 .submitBtn {
   width: 100%;
+  color: var(--primary-text-color);
+  background-color: var(--primary-bg-color);
+  border: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.submitBtn:hover {
+  opacity: 0.5;
 }
 
 .img {
@@ -45,7 +70,11 @@
   gap: 0.5rem;
 }
 
-.crementBtn {
+.crementBtnDiv {
   display: flex;
   gap: 0.5rem;
+}
+
+.crementBtn {
+  color: inherit;
 }

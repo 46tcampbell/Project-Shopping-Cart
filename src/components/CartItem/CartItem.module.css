@@ -1,0 +1,55 @@
+.cardDiv {
+  display: flex;
+  /* flex-direction: column; */
+  width: 80vw;
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: 1rem;
+  gap: 2rem;
+  background-color: var(--primary-text-color);
+  color: var(--primary-bg-color);
+  box-shadow: var(--primary-box-shadow);
+}
+
+.imgDiv {
+  height: 175px;
+  width: 150px;
+  /* display: flex;
+    justify-content: center; */
+}
+
+.img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.quantityDiv {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.detailsDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.submitBtn {
+  width: 100%;
+  color: var(--primary-text-color);
+  background-color: var(--secondary-bg-color);
+  border: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.submitBtn:hover {
+  opacity: 0.5;
+}
+
+.crementBtn {
+  color: inherit;
+  min-width: 40px;
+}

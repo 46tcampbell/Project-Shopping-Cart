@@ -1,3 +1,4 @@
+import styles from './Cart.module.css';
 import { useOutletContext, Link } from 'react-router';
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
@@ -21,8 +22,8 @@ function Cart() {
 
   if (context.cartTotal === 0) {
     return (
-      <main>
-        <div>
+      <main className={styles.emptyCartMain}>
+        <div className={styles.emptyCartDiv}>
           <h1>Oh no, you don't have anything in the cart!</h1>
           <Link to='/shop'>
             You can go back to the shop page by clicking here, though!
@@ -33,7 +34,7 @@ function Cart() {
   } else {
     return (
       <main>
-        <ul>
+        <ul className={styles.cartUl}>
           {context.cart.map((item) => {
             if (item.quantity > 0) {
               return (

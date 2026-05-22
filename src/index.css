@@ -70,10 +70,18 @@ h6 {
 
 /* Global settings I want */
 
+:root {
+  --primary-bg-color: #2593f3;
+  --secondary-bg-color: #f11616;
+  --primary-text-color: #f7f7f7;
+  --primary-text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --primary-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
+}
+
 body {
   padding: 1rem;
-  background-color: #2593f3;
-  color: white;
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
 }
 
 ul {
@@ -85,12 +93,13 @@ a {
   display: inline-block;
   text-decoration: none;
   transition: transform 0.3s ease;
+  color: inherit;
 }
 
 a:hover,
 a:focus {
   transform: translateY(-5px);
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-shadow: var(--primary-text-shadow);
   text-decoration: underline;
 }
 

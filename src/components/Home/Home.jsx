@@ -5,24 +5,24 @@ export default function Home() {
     <>
       <main>
         <h1 className={styles.homeH1}>The Shop</h1>
-        <div className={styles.homeDIV}>
-          <div className={styles.homeIMGDIV}>
+        <div className={styles.homeDiv}>
+          <div className={styles.homeImgDiv}>
             <img
-              className={styles.homeIMG}
+              className={styles.homeImg}
               src='../../../images/storefront1.jpg'
               alt='generic storefront'
             />
           </div>
-          <div className={styles.homeIMGDIV}>
+          <div className={styles.homeImgDiv}>
             <img
-              className={styles.homeIMG}
+              className={styles.homeImg}
               src='../../../images/open-sign.jpg'
               alt='open shop sign'
             />
           </div>
-          <div className={styles.homeIMGDIV}>
+          <div className={styles.homeImgDiv}>
             <img
-              className={styles.homeIMG}
+              className={styles.homeImg}
               src='../../../images/storefront2.jpg'
               alt="Bridie's storefront"
             />

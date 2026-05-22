@@ -13,19 +13,27 @@ function CartItem({
 }) {
   return (
     <div className={styles.cardDiv}>
-      <div>
-        <h3 className={styles.shopH3}>{title}</h3>
+      <div className={styles.imgDiv}>
+        <img className={styles.img} src={image} alt={altText} />
       </div>
-      <div>
-        <img src={image} alt={altText} />
-      </div>
-      <div>
+      <div className={styles.detailsDiv}>
+        <div>
+          <h3 className={styles.shopH3}>{title}</h3>
+        </div>
         <div className={styles.quantityDiv}>
-          <p>Quantity: {quantity}</p>
-          <button onClick={() => quantityDecrement(id)} type='button'>
+          <button
+            className={styles.crementBtn}
+            onClick={() => quantityDecrement(id)}
+            type='button'
+          >
             {quantity === 1 ? '🗑️' : '-'}
           </button>
-          <button onClick={() => quantityIncrement(id)} type='button'>
+          <p>Quantity: {quantity}</p>
+          <button
+            className={styles.crementBtn}
+            onClick={() => quantityIncrement(id)}
+            type='button'
+          >
             +
           </button>
         </div>

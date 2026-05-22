@@ -1,14 +1,14 @@
-.homeIMG {
+.homeImg {
   max-width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.homeIMGDIV {
+.homeImgDiv {
   flex: 1;
 }
 
-.homeDIV {
+.homeDiv {
   display: flex;
   flex-direction: row;
   max-width: 100vw;

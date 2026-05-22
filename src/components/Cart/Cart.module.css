@@ -1,0 +1,19 @@
+.emptyCartMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.emptyCartDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cartUl {
+  display: grid;
+  justify-items: center;
+  gap: 2rem;
+}
